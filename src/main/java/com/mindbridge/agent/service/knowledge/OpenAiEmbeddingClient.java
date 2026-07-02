@@ -35,11 +35,10 @@ public class OpenAiEmbeddingClient implements EmbeddingClient {
         }
         Map<String, Object> body = Map.of(
                 "model", properties.getEmbedding().getModel(),
-                "input", text,
-                "encoding_format", "float"
+                "input", text
         );
         JsonNode response = webClient.post()
-                .uri("/v1/embeddings")
+                .uri(properties.getEmbedding().getEndpoint())
                 .bodyValue(body)
                 .retrieve()
                 .bodyToMono(JsonNode.class)

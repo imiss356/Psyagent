@@ -8,8 +8,11 @@ import org.springframework.ai.ollama.api.OllamaOptions;
 import org.springframework.ai.openai.OpenAiChatModel;
 import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.ai.openai.api.OpenAiApi;
+import java.time.Duration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
+import org.springframework.web.client.RestClient;
 
 /**
  * Spring AI 大模型客户端装配配置。
@@ -21,10 +24,10 @@ import org.springframework.context.annotation.Configuration;
 public class AiClientConfig {
 
     @Bean
-    public AiClient aiClient(MindBridgeProperties properties) {
+    public AiClient aiClient(MindBridgeProperties properties, OllamaThinkDisabler thinkDisabler) {
         String provider = properties.getAi().getProvider().toLowerCase();
         if ("ollama".equals(provider)) {
-            OllamaChatModel model = ollamaChatModel(properties);
+            OllamaChatModel model = ollamaChatModel(properties, thinkDisabler);
             return new SpringAiChatClient(model, model);
         }
         if ("openai".equals(provider)) {
@@ -38,10 +41,17 @@ public class AiClientConfig {
                 "Unsupported AI_PROVIDER=" + provider + ". Supported providers: ollama, openai.");
     }
 
-    private OllamaChatModel ollamaChatModel(MindBridgeProperties properties) {
+    private OllamaChatModel ollamaChatModel(MindBridgeProperties properties, OllamaThinkDisabler thinkDisabler) {
         MindBridgeProperties.Ollama ollama = properties.getAi().getOllama();
+        SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+        requestFactory.setConnectTimeout(Duration.ofSeconds(10));
+        requestFactory.setReadTimeout(Duration.ofSeconds(120));
+        RestClient.Builder restClientBuilder = RestClient.builder()
+                .requestFactory(requestFactory)
+                .requestInterceptor(thinkDisabler);
         OllamaApi api = OllamaApi.builder()
                 .baseUrl(ollama.getBaseUrl())
+                .restClientBuilder(restClientBuilder)
                 .build();
         OllamaOptions options = OllamaOptions.builder()
                 .model(ollama.getModel())

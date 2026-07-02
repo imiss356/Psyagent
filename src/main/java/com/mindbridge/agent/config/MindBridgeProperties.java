@@ -219,6 +219,8 @@ public class MindBridgeProperties {
         private String apiKey = "";
         /** 文档要求的默认 embedding 模型。 */
         private String model = "text-embedding-3-small";
+        /** Embedding 接口路径，OpenAI 兼容为 /v1/embeddings，智谱为 /v4/embeddings。 */
+        private String endpoint = "/v1/embeddings";
 
         public String getBaseUrl() {
             return baseUrl;
@@ -242,6 +244,14 @@ public class MindBridgeProperties {
 
         public void setModel(String model) {
             this.model = model;
+        }
+
+        public String getEndpoint() {
+            return endpoint;
+        }
+
+        public void setEndpoint(String endpoint) {
+            this.endpoint = endpoint;
         }
     }
 

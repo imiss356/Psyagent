@@ -29,7 +29,7 @@ public class KnowledgeChunk {
     private int sourceIndex;
 
     @Lob
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "LONGTEXT")
     private String content;
 
     @Lob

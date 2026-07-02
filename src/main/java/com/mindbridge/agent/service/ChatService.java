@@ -132,7 +132,7 @@ public class ChatService {
         Flux<ServerSentEvent<ChatStreamEvent>> tokens = aiClient.stream(prepared.messages())
                 .doOnNext(assistantReply::append)
                 .map(token -> event("token", ChatStreamEvent.token(prepared.session().getPublicId(), token)))
-                .timeout(Duration.ofSeconds(45))
+                .timeout(Duration.ofSeconds(120))
                 .onErrorResume(exception -> Flux.just(event(
                         "error",
                         ChatStreamEvent.error(prepared.session().getPublicId(), "模型响应超时或失败，请稍后重试。"))))

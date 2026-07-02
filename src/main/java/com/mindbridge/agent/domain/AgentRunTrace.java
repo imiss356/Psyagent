@@ -57,7 +57,7 @@ public class AgentRunTrace {
     private ChatMessage triggerMessage;
 
     @Lob
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "LONGTEXT")
     private String input;
 
     @Enumerated(EnumType.STRING)
