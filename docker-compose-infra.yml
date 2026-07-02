@@ -1,0 +1,42 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: mindbridge-mysql
+    environment:
+      MYSQL_DATABASE: mindbridge
+      MYSQL_USER: mindbridge
+      MYSQL_PASSWORD: mindbridge
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  redis:
+    image: redis:7.2-alpine
+    container_name: mindbridge-redis
+    command: redis-server --appendonly yes
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+  chroma:
+    image: chromadb/chroma:latest
+    container_name: mindbridge-chroma
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma-data:/chroma/chroma
+
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: mindbridge-mailpit
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+volumes:
+  mysql-data:
+  redis-data:
+  chroma-data:

@@ -1,0 +1,322 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1600" viewBox="0 0 2400 1600">
+  <defs>
+    <style>
+      .bg { fill: #f6f8fb; }
+      .title { font: 800 48px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #111827; }
+      .subtitle { font: 400 22px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #526070; }
+      .lane { fill: #ffffff; stroke: #d8dee8; stroke-width: 2; }
+      .lane-title { font: 800 26px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #172033; }
+      .lane-note { font: 400 17px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #667085; }
+      .card { fill: #ffffff; stroke-width: 2.4; }
+      .card-soft { fill: #fbfdff; stroke-width: 2.1; }
+      .card-title { font: 800 22px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #111827; }
+      .card-body { font: 400 16px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #475467; }
+      .tiny { font: 400 14px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #667085; }
+      .label { font: 800 15px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #344054; }
+      .chip { fill: #f2f4f7; stroke: #d0d5dd; stroke-width: 1.4; }
+      .chip-text { font: 800 15px Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #344054; }
+      .blue { stroke: #2563eb; }
+      .teal { stroke: #0f766e; }
+      .purple { stroke: #7c3aed; }
+      .green { stroke: #16a34a; }
+      .orange { stroke: #f97316; }
+      .red { stroke: #dc2626; }
+      .slate { stroke: #64748b; }
+      .fill-blue { fill: #eff6ff; }
+      .fill-teal { fill: #ecfdf5; }
+      .fill-purple { fill: #f5f3ff; }
+      .fill-green { fill: #f0fdf4; }
+      .fill-orange { fill: #fff7ed; }
+      .fill-red { fill: #fff1f2; }
+      .line { stroke: #64748b; stroke-width: 2.6; fill: none; marker-end: url(#arrow-slate); }
+      .line-main { stroke: #7c3aed; stroke-width: 3.4; fill: none; marker-end: url(#arrow-purple); }
+      .line-blue { stroke: #2563eb; stroke-width: 3.0; fill: none; marker-end: url(#arrow-blue); }
+      .line-teal { stroke: #0f766e; stroke-width: 3.0; fill: none; marker-end: url(#arrow-teal); }
+      .line-green { stroke: #16a34a; stroke-width: 2.9; fill: none; marker-end: url(#arrow-green); }
+      .line-orange { stroke: #f97316; stroke-width: 2.9; fill: none; marker-end: url(#arrow-orange); }
+      .line-red { stroke: #dc2626; stroke-width: 3.0; fill: none; marker-end: url(#arrow-red); }
+      .line-dash { stroke: #98a2b3; stroke-width: 2.4; fill: none; stroke-dasharray: 8 8; marker-end: url(#arrow-slate); }
+      .boundary { fill: none; stroke: #bfdbfe; stroke-width: 2.2; stroke-dasharray: 10 8; }
+      .shadow { filter: url(#shadow); }
+    </style>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#111827" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrow-slate" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+      <path d="M2,2 L12,7 L2,12 Z" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+      <path d="M2,2 L12,7 L2,12 Z" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+      <path d="M2,2 L12,7 L2,12 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-teal" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+      <path d="M2,2 L12,7 L2,12 Z" fill="#0f766e"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+      <path d="M2,2 L12,7 L2,12 Z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+      <path d="M2,2 L12,7 L2,12 Z" fill="#f97316"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto">
+      <path d="M2,2 L12,7 L2,12 Z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="2400" height="1600"/>
+
+  <text class="title" x="72" y="72">MindBridge 全项目 Workflow</text>
+  <text class="subtitle" x="72" y="112">从模型准备、系统启动、学生 SSE 对话、多 Agent 编排，到 RAG 知识库、风险报告、MCP 工具、评测和发布的完整闭环</text>
+
+  <rect class="lane shadow" x="48" y="142" width="2304" height="180" rx="8"/>
+  <text class="lane-title" x="78" y="186">0. 模型与启动层</text>
+  <text class="lane-note" x="78" y="214">本地微调模型是默认路径，也可以通过环境变量切换到 OpenAI。</text>
+
+  <rect class="card teal fill-teal" x="80" y="242" width="250" height="58" rx="8"/>
+  <text class="card-title" x="105" y="268">训练数据</text>
+  <text class="card-body" x="105" y="292">data/lora/*.jsonl</text>
+
+  <rect class="card teal fill-teal" x="390" y="242" width="270" height="58" rx="8"/>
+  <text class="card-title" x="415" y="268">LoRA 微调 / 合并</text>
+  <text class="card-body" x="415" y="292">Qwen2.5-7B adapter</text>
+
+  <rect class="card teal fill-teal" x="720" y="242" width="260" height="58" rx="8"/>
+  <text class="card-title" x="745" y="268">GGUF + Modelfile</text>
+  <text class="card-body" x="745" y="292">mindbridge-qwen2.5</text>
+
+  <rect class="card teal fill-teal" x="1040" y="242" width="260" height="58" rx="8"/>
+  <text class="card-title" x="1065" y="268">模型服务</text>
+  <text class="card-body" x="1065" y="292">Ollama / OpenAI</text>
+
+  <rect class="card slate" x="1360" y="242" width="300" height="58" rx="8"/>
+  <text class="card-title" x="1385" y="268">启动依赖</text>
+  <text class="card-body" x="1385" y="292">JDK / Maven / Docker Compose</text>
+
+  <rect class="card slate" x="1720" y="242" width="265" height="58" rx="8"/>
+  <text class="card-title" x="1745" y="268">运行脚本</text>
+  <text class="card-body" x="1745" y="292">scripts/run-dev.sh</text>
+
+  <rect class="card purple fill-purple" x="2045" y="242" width="250" height="58" rx="8"/>
+  <text class="card-title" x="2070" y="268">Spring Boot</text>
+  <text class="card-body" x="2070" y="292">WebFlux + JPA + Security</text>
+
+  <path class="line-teal" d="M330 271 H390"/>
+  <path class="line-teal" d="M660 271 H720"/>
+  <path class="line-teal" d="M980 271 H1040"/>
+  <path class="line" d="M1300 271 H1360"/>
+  <path class="line" d="M1660 271 H1720"/>
+  <path class="line-main" d="M1985 271 H2045"/>
+
+  <rect class="lane shadow" x="48" y="350" width="2304" height="235" rx="8"/>
+  <text class="lane-title" x="78" y="394">1. 入口与 API 层</text>
+  <text class="lane-note" x="78" y="422">学生端主要走流式聊天；管理员端维护知识库、查看报告、Excel 记录和预警记录。</text>
+
+  <rect class="card blue fill-blue" x="86" y="458" width="205" height="72" rx="8"/>
+  <text class="card-title" x="112" y="489">学生</text>
+  <text class="card-body" x="112" y="516">陪伴聊天 / 历史会话</text>
+
+  <rect class="card orange fill-orange" x="86" y="540" width="205" height="72" rx="8"/>
+  <text class="card-title" x="112" y="571">管理员</text>
+  <text class="card-body" x="112" y="598">知识库 / 报告看板</text>
+
+  <rect class="card slate" x="350" y="500" width="255" height="82" rx="8"/>
+  <text class="card-title" x="376" y="531">Web 前端</text>
+  <text class="card-body" x="376" y="558">static/index.html</text>
+  <text class="card-body" x="376" y="579">app.js / styles.css</text>
+
+  <rect class="card purple fill-purple" x="665" y="500" width="255" height="82" rx="8"/>
+  <text class="card-title" x="691" y="531">Spring Security</text>
+  <text class="card-body" x="691" y="558">Basic Auth</text>
+  <text class="card-body" x="691" y="579">student / admin 角色</text>
+
+  <rect class="card purple fill-purple" x="1000" y="458" width="285" height="72" rx="8"/>
+  <text class="card-title" x="1026" y="489">ChatController</text>
+  <text class="card-body" x="1026" y="516">POST /api/chat/stream</text>
+
+  <rect class="card purple fill-purple" x="1000" y="540" width="285" height="72" rx="8"/>
+  <text class="card-title" x="1026" y="571">Profile / Status</text>
+  <text class="card-body" x="1026" y="598">账号信息 + 模型状态</text>
+
+  <rect class="card orange fill-orange" x="1368" y="458" width="310" height="72" rx="8"/>
+  <text class="card-title" x="1394" y="489">KnowledgeController</text>
+  <text class="card-body" x="1394" y="516">POST /api/admin/knowledge</text>
+
+  <rect class="card orange fill-orange" x="1368" y="540" width="310" height="72" rx="8"/>
+  <text class="card-title" x="1394" y="571">ReportController</text>
+  <text class="card-body" x="1394" y="598">reports / excel / alerts</text>
+
+  <rect class="card slate" x="1780" y="500" width="265" height="82" rx="8"/>
+  <text class="card-title" x="1806" y="531">HomeController</text>
+  <text class="card-body" x="1806" y="558">根路径返回首页</text>
+  <text class="card-body" x="1806" y="579">端口默认 8080</text>
+
+  <rect class="chip" x="2115" y="500" width="190" height="82" rx="8"/>
+  <text class="chip-text" x="2141" y="532">入口结果</text>
+  <text class="tiny" x="2141" y="558">学生走聊天主链路</text>
+  <text class="tiny" x="2141" y="579">管理员走运营闭环</text>
+
+  <path class="line-blue" d="M291 494 H350"/>
+  <path class="line-orange" d="M291 576 H350"/>
+  <path class="line-main" d="M605 541 H665"/>
+  <path class="line-main" d="M920 514 H1000"/>
+  <path class="line-main" d="M920 568 H1000"/>
+  <path class="line-orange" d="M920 514 C1088 420 1242 420 1368 494"/>
+  <path class="line-orange" d="M920 568 C1088 660 1242 660 1368 576"/>
+  <path class="line" d="M605 541 C1030 360 1560 392 1780 500"/>
+  <path class="line" d="M2045 541 H2115"/>
+
+  <rect class="lane shadow" x="48" y="615" width="2304" height="515" rx="8"/>
+  <text class="lane-title" x="78" y="659">2. 学生 SSE 对话主链路</text>
+  <text class="lane-note" x="78" y="687">每轮输入先进受控 Agent loop，最多 8 步；CHAT 不查 RAG、不生成心理报告，CONSULT / RISK 才进入知识检索与风险守护。</text>
+
+  <rect class="card purple fill-purple" x="88" y="738" width="245" height="92" rx="8"/>
+  <text class="card-title" x="114" y="771">ChatService.prepare</text>
+  <text class="card-body" x="114" y="799">会话创建 / 输入脱敏</text>
+  <text class="card-body" x="114" y="821">保存用户消息到 DB</text>
+
+  <rect class="card purple fill-purple" x="390" y="738" width="275" height="92" rx="8"/>
+  <text class="card-title" x="416" y="771">AgentRuntimeService</text>
+  <text class="card-body" x="416" y="799">MAX_STEPS = 8</text>
+  <text class="card-body" x="416" y="821">supports() 选择下一步</text>
+
+  <rect class="boundary" x="715" y="708" width="1020" height="375" rx="8"/>
+  <text class="label" x="735" y="733">受控多 Agent loop</text>
+
+  <rect class="card blue fill-blue" x="755" y="760" width="235" height="74" rx="8"/>
+  <text class="card-title" x="781" y="790">MemoryAgent</text>
+  <text class="card-body" x="781" y="817">Redis 优先，MySQL 兜底</text>
+
+  <rect class="card blue fill-blue" x="1050" y="760" width="255" height="74" rx="8"/>
+  <text class="card-title" x="1076" y="790">SupervisorAgent</text>
+  <text class="card-body" x="1076" y="817">CHAT / CONSULT / RISK</text>
+
+  <rect class="card green fill-green" x="760" y="910" width="240" height="82" rx="8"/>
+  <text class="card-title" x="786" y="941">KnowledgeAgent</text>
+  <text class="card-body" x="786" y="968">query 改写 / 检索 / 二查</text>
+
+  <rect class="card red fill-red" x="1060" y="910" width="255" height="82" rx="8"/>
+  <text class="card-title" x="1086" y="941">RiskGuardianAgent</text>
+  <text class="card-body" x="1086" y="968">心理评估 + 高风险兜底</text>
+
+  <rect class="card blue fill-blue" x="1415" y="750" width="255" height="82" rx="8"/>
+  <text class="card-title" x="1441" y="781">CompanionAgent</text>
+  <text class="card-body" x="1441" y="808">普通陪伴回复策略</text>
+
+  <rect class="card blue fill-blue" x="1415" y="910" width="255" height="82" rx="8"/>
+  <text class="card-title" x="1441" y="941">CounselorAgent</text>
+  <text class="card-body" x="1441" y="968">RAG + 风险结果生成策略</text>
+
+  <rect class="card teal fill-teal" x="1800" y="780" width="250" height="90" rx="8"/>
+  <text class="card-title" x="1826" y="812">AiClient</text>
+  <text class="card-body" x="1826" y="840">Spring AI 统一适配</text>
+  <text class="card-body" x="1826" y="862">complete() / stream()</text>
+
+  <rect class="card teal fill-teal" x="2100" y="780" width="205" height="90" rx="8"/>
+  <text class="card-title" x="2126" y="812">模型输出</text>
+  <text class="card-body" x="2126" y="840">Ollama 本地模型</text>
+  <text class="card-body" x="2126" y="862">或 OpenAI</text>
+
+  <rect class="card purple fill-purple" x="1800" y="940" width="250" height="90" rx="8"/>
+  <text class="card-title" x="1826" y="972">SSE 返回</text>
+  <text class="card-body" x="1826" y="1000">meta / token / done</text>
+  <text class="card-body" x="1826" y="1022">保存助手消息</text>
+
+  <rect class="card-soft slate" x="2100" y="940" width="205" height="90" rx="8"/>
+  <text class="card-title" x="2126" y="972">学生端体验</text>
+  <text class="card-body" x="2126" y="1000">打字机式响应</text>
+  <text class="card-body" x="2126" y="1022">后台标签不外显</text>
+
+  <path class="line-main" d="M333 784 H390"/>
+  <path class="line-main" d="M665 784 H755"/>
+  <path class="line-blue" d="M990 797 H1050"/>
+  <path class="line-blue" d="M1305 797 H1415"/>
+  <text class="label" x="1340" y="773">CHAT</text>
+  <path class="line-blue" d="M1305 834 C1305 884 930 860 880 910"/>
+  <text class="label" x="1020" y="885">CONSULT / RISK</text>
+  <path class="line-green" d="M1000 951 H1060"/>
+  <path class="line-red" d="M1315 951 H1415"/>
+  <path class="line-blue" d="M1670 791 C1730 791 1742 825 1800 825"/>
+  <path class="line-blue" d="M1670 951 C1742 951 1740 852 1800 852"/>
+  <path class="line-teal" d="M2050 825 H2100"/>
+  <path class="line-main" d="M2220 870 C2220 905 1940 900 1925 940"/>
+  <path class="line-main" d="M2050 985 H2100"/>
+
+  <rect class="chip" x="88" y="1030" width="575" height="54" rx="8"/>
+  <text class="chip-text" x="114" y="1062">持久化：ChatMessage / ChatSession 写入 MySQL 或 H2，同时追加 Redis 短期记忆。</text>
+
+  <path class="line-dash" d="M210 830 V1030"/>
+  <path class="line-dash" d="M1925 1030 C1780 1100 740 1100 662 1057"/>
+
+  <rect class="lane shadow" x="48" y="1160" width="2304" height="260" rx="8"/>
+  <text class="lane-title" x="78" y="1204">3. RAG、报告与工具闭环</text>
+  <text class="lane-note" x="78" y="1232">管理员维护知识库；咨询/风险消息生成后台报告；高风险按“写 Excel 成功后再预警”的顺序执行。</text>
+
+  <rect class="card green fill-green" x="88" y="1270" width="260" height="82" rx="8"/>
+  <text class="card-title" x="114" y="1301">知识来源</text>
+  <text class="card-body" x="114" y="1328">内置 knowledge/*</text>
+  <text class="card-body" x="114" y="1349">管理员上传 PDF/MD/TXT</text>
+
+  <rect class="card green fill-green" x="400" y="1270" width="255" height="82" rx="8"/>
+  <text class="card-title" x="426" y="1301">KnowledgeService</text>
+  <text class="card-body" x="426" y="1328">切块 / embedding / 入库</text>
+  <text class="card-body" x="426" y="1349">混合检索 + 上下文扩展</text>
+
+  <rect class="card green fill-green" x="705" y="1270" width="250" height="82" rx="8"/>
+  <text class="card-title" x="731" y="1301">检索存储</text>
+  <text class="card-body" x="731" y="1328">MySQL/H2 KnowledgeChunk</text>
+  <text class="card-body" x="731" y="1349">Chroma 可选镜像</text>
+
+  <rect class="card red fill-red" x="1030" y="1270" width="260" height="82" rx="8"/>
+  <text class="card-title" x="1056" y="1301">心理报告</text>
+  <text class="card-body" x="1056" y="1328">CONSULT / RISK 保存</text>
+  <text class="card-body" x="1056" y="1349">情绪、风险、置信度</text>
+
+  <rect class="card orange fill-orange" x="1345" y="1270" width="285" height="82" rx="8"/>
+  <text class="card-title" x="1371" y="1301">ToolOrchestration</text>
+  <text class="card-body" x="1371" y="1328">回复完成后异步执行</text>
+  <text class="card-body" x="1371" y="1349">Excel 成功后才发 HIGH 预警</text>
+
+  <rect class="card orange fill-orange" x="1685" y="1270" width="270" height="82" rx="8"/>
+  <text class="card-title" x="1711" y="1301">Excel 台账</text>
+  <text class="card-body" x="1711" y="1328">local / http / mcp</text>
+  <text class="card-body" x="1711" y="1349">data/mindbridge-reports.xlsx</text>
+
+  <rect class="card red fill-red" x="2010" y="1270" width="275" height="82" rx="8"/>
+  <text class="card-title" x="2036" y="1301">预警通知</text>
+  <text class="card-body" x="2036" y="1328">SMTP / HTTP / MCP / log</text>
+  <text class="card-body" x="2036" y="1349">AlertRecord 记录重试结果</text>
+
+  <path class="line-green" d="M348 1311 H400"/>
+  <path class="line-green" d="M655 1311 H705"/>
+  <path class="line-green" d="M880 1270 C870 1155 880 1015 880 992"/>
+  <path class="line-red" d="M1188 992 C1195 1110 1155 1190 1160 1270"/>
+  <path class="line-orange" d="M1290 1311 H1345"/>
+  <path class="line-orange" d="M1630 1311 H1685"/>
+  <path class="line-red" d="M1955 1311 H2010"/>
+
+  <rect class="lane shadow" x="48" y="1450" width="2304" height="108" rx="8"/>
+  <text class="lane-title" x="78" y="1494">4. 评测、部署与发布</text>
+
+  <rect class="card-soft slate" x="405" y="1480" width="395" height="54" rx="8"/>
+  <text class="card-body" x="431" y="1513">RagEvaluationRunner -> target/rag-eval-report.json</text>
+
+  <rect class="card-soft slate" x="850" y="1480" width="365" height="54" rx="8"/>
+  <text class="card-body" x="876" y="1513">eval/run-ragas-eval.py 计算 RAGAS 指标</text>
+
+  <rect class="card-soft slate" x="1265" y="1480" width="405" height="54" rx="8"/>
+  <text class="card-body" x="1291" y="1513">docker-compose: MySQL / Redis / Chroma / Mailpit</text>
+
+  <rect class="card-soft slate" x="1720" y="1480" width="385" height="54" rx="8"/>
+  <text class="card-body" x="1746" y="1513">package-release: 应用包和 GGUF 模型分发</text>
+
+  <rect class="chip" x="2155" y="1480" width="175" height="54" rx="8"/>
+  <text class="chip-text" x="2181" y="1513">默认端口 8080</text>
+
+  <path class="line-dash" d="M830 1352 C780 1435 600 1428 603 1480"/>
+  <path class="line" d="M800 1507 H850"/>
+  <path class="line" d="M1215 1507 H1265"/>
+  <path class="line" d="M1670 1507 H1720"/>
+  <path class="line" d="M2105 1507 H2155"/>
+</svg>
